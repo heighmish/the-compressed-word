@@ -13,10 +13,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Setup pnpm
-      uses: pnpm/action-setup@v3
+        uses: pnpm/action-setup@v3
 
   build:
-
     runs-on: ubuntu-latest
 
     strategy:
@@ -25,11 +24,11 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-    - run: pnpm ci
-    - run: pnpm run build --if-present
-    - run: pnpm test
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: pnpm ci
+      - run: pnpm run build --if-present
+      - run: pnpm test
