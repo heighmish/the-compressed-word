@@ -13,7 +13,7 @@ export default function CompressionOutput({
   );
 }
 
-function GetRLE(input: string): string {
+export function GetRLE(input: string): string {
   // its not right
   let prevChar: string | undefined = undefined;
   let currCount: number = 1;
