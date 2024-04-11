@@ -13,8 +13,6 @@ export default function CompressionOutput({
   );
 }
 
-export function GetBWT(input: string): string {}
-
 export function GetRLE(input: string): string {
   // its not right
   let prevChar: string | undefined = undefined;
